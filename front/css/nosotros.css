@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;1,100;1,300;1,400;1,500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Open+Sans:wght@300&display=swap');
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    margin: 0;
+    padding: 0;
+    background: rgb(105,156,207);
+    background: linear-gradient(185deg, rgba(105,156,207,1) 0%, rgba(110,103,176,0.6896008403361344) 50%, rgba(144,73,116,1) 100%);
+}
+.nosotros{
+    background-color: #ECECEC;
+    padding: 0;
+    margin: 0% 20% 20% 20%;
+    position: relative;
+}
+
+h5{
+    text-align: center;
+    width: 100%;
+    height: 40%;
+    font-size:100%;
+    color: #034158;
+    
+}
+
+.size{
+    font-size: 44px;
+    font-family: 'Audiowide', sans-serif;
+   
+}
+
+.nosotros > p{
+    margin: 5% 20% 5% 20%;
+    font-family: 'Roboto';
+    color: #034158;
+}
+
+
+
+
+.container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.profile {
+    text-align: center;
+    margin: 5px;
+    display: flex;
+    flex-direction: column; /* Cambiamos la dirección de los elementos a columna */
+    align-items: center;
+   
+}
+
+.circular-image {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border: 5px solid #fff; /* Borde blanco alrededor de la imagen circular */
+}
+
+.profile a {
+    display: block;
+    margin-top: 10px;
+    font-family: 'Audiowide', sans-serif;
+    color: #034158;
+  
+}
+
+
+@media screen and (max-width: 768px) {
+    body {
+        align-items: flex-start; /* Alinear contenido arriba en pantallas pequeñas */
+    }
+
+    .nosotros {
+        margin: 10px; /* Reducir el margen para dar más espacio en pantallas pequeñas */
+    }
+
+    h5 {
+        font-size: 24px; /* Reducir el tamaño de fuente en pantallas pequeñas */
+        height: auto; /* Restaurar la altura automática */
+    }
+
+    .size {
+        font-size: 36px; /* Ajustar el tamaño de fuente para móviles */
+    }
+
+    .nosotros > p {
+        margin: 10px; /* Ajustar el margen para móviles */
+    }
+
+    .container {
+        display: flex;
+        flex-direction: column; /* Cambiamos la dirección de los elementos a columna para móviles */
+        align-items: center;
+        text-align: center; /* Centramos el texto en dispositivos móviles */
+    }
+    
+  
+}
