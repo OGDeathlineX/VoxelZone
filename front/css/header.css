@@ -1,0 +1,115 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap");
+
+body{
+    padding: 0;
+    margin: 0;
+   
+}
+
+.logo-header {
+  color: rgba(var(--bs-link-color-rgb),var(--bs-link-opacity,1));
+  text-decoration: underline;
+  display: contents;
+}
+
+header {
+  padding: 0;
+  margin: 0;
+  position: relative;
+  display: block;
+  width: 100%;
+  height: auto;
+  background: rgb(22,40,90);
+  background: linear-gradient(0deg, rgba(22,40,90,1) 0%, rgba(60,98,125,1) 50%, rgba(22,40,90,1) 100%);
+  /* background-image: url('../img/fondo1.png'); */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  min-height: 100px;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.header {
+  padding: 0;
+  position: relative;
+  display: flex;
+  width: 100%;
+  margin: 0px 0;
+  
+  justify-content: center;
+  align-items: center;
+}
+.header > p {
+  font-size: 70px;
+  margin: 0;
+  padding: 30px ;
+  color: #593B72;
+  -webkit-text-stroke: 1px white; /* Ancho y color del trazo para navegadores Webkit (como Chrome) */
+  
+}.img {
+  position: relative;
+  display: block;
+  width: 120px;
+  height: 120px;
+  margin: 0 20px;
+  background: curl;
+}
+img {
+  position: relative;
+  display: block;
+  width: 30%;
+  height: 30%;
+  margin: 0 20px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+html.hydrated body header nav.navbar
+{
+  background-color: #152958 !important;
+}
+
+.navbar-brand
+{
+  color: white !important;
+  margin-left: 30px;
+}
+
+.nav-link
+{
+  color: white !important;
+}
+
+@media only screen and (max-width: 768px)
+{
+.header>p {
+  font-size: 40px;
+  margin: 0;
+  padding: 10px ;}
+
+  .header img {
+  position: relative;
+  display: block;
+  width: 80%;
+  height: 80%;
+  margin: 0 20px;
+}
+
+.img
+{
+  margin: 0;
+}
+
+img
+{
+  margin: 0;
+}
+
+}

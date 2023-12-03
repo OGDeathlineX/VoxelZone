@@ -1,15 +1,20 @@
 <?php
-function login($data,$mysqli){
-	$sql 	= "SELECT * FROM 
-							usuarios 
-						WHERE 
-							email	='".$data["Correo"] ."' 
-						AND 
-							pass ='".$data["Pass"]."'";
-	$result = $mysqli -> query($sql);
-	if($result->num_rows>0){
-		return true;
-	}else{
-		return false;
+	function login($data,$mysqli)
+	{
+		$sql 	= "SELECT user FROM 
+								users 
+							WHERE 
+								email ='".$data["email"] ."' 
+							AND 
+								pass='".$data["pass"]."'";
+		$result = $mysqli -> query($sql);
+
+		if($result->num_rows>0)
+		{
+			return $result->fetch_all(MYSQLI_ASSOC);
+		}
+		else
+		{
+			return false;
+		}
 	}
-}

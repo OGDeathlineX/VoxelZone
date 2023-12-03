@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;1,100;1,300;1,400;1,500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Open+Sans:wght@300&display=swap');
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    margin: 0;
+    padding: 0;
+    background: rgb(105,156,207);
+    background: linear-gradient(185deg, rgba(105,156,207,1) 0%, rgba(110,103,176,0.6896008403361344) 50%, rgba(144,73,116,1) 100%);
+}
+.nosotros{
+    width: 70%;
+    display: grid;
+    grid-template-columns: 1fr 2fr; /* Dos columnas de tamaño igual */
+    grid-template-rows: 1 1 1;
+    grid-gap: 20px; /* Espacio entre las columnas */
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+    padding: 0;
+    margin: 10% 15% 20% 15%;
+    position: relative;
+    height: auto;
+    border-radius: 30px;
+}
+
+.size{
+    grid-column: 1 /span 2;
+    grid-row: 1;
+    width: 100%;
+    margin: 3% 20% 0 0 ;
+    padding: 0;
+    text-align: center;
+    font-size: 44px;
+    font-family: 'Audiowide', sans-serif;
+    background-color: red;
+   
+}
+
+h5{
+    text-align: center;
+    width: 100%;
+    height: 0%;
+    font-size:100%;
+    color: #034158;
+    margin: 0% 0% 0% 0%;
+    padding: 0;
+    
+}
+
+
+.nosotros > .columna1 {
+    grid-column: 1;
+    grid-row: 2;
+    background-color: #c0c0c0;
+    padding: 0;
+    margin: 0 0 0 7%;
+    display: flex;
+    justify-content: center; /* Centrar horizontalmente */
+    align-items: center; /* Centrar verticalmente */
+    height: 100%; /* Ajusta la altura según tus necesidades */
+   
+    
+  }
+  .columna2 {
+    grid-column:2;
+    grid-row: 2;
+    background-color: #c0c0c0;
+    padding: 20px;
+    display: grid;
+    grid-template-rows: 1fr 1fr; /* Dos filas de tamaño igual */
+    margin: 0 7% 0 0%;
+    
+  }
+
+  .columna2 .fila1,
+  .columna2 .fila2{
+    margin: 7% 0 7% 0;
+    
+  }
+  .columna2 .fila1 a,
+  .columna2 .fila2 a {
+    color: gray; /* Cambiar el color del texto a gris */
+    text-decoration: underline; /* Subrayar el texto */
+    font-family: 'Roboto', sans-serif;
+    font-size: larger;
+    
+  }
+
+
+
+h5{
+    text-align: center;
+    width: 100%;
+    height: 0%;
+    font-size:100%;
+    color: #034158;
+    margin: 0% 0% 0% 0%;
+    padding: 0;
+    
+}
+.centrar {
+    grid-column: 1 /span 2;
+    grid-row: 3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 20vh; /* Esto centra verticalmente también */
+  }
+  
+  .boton {
+    width: 30%;
+    background: linear-gradient(185deg, rgba(105,156,207,1) 0%, rgba(110,103,176,1) 50%, rgba(144,73,116,1) 100%);
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-family: 'Audiowide', sans-serif;
+    font-size: x-large;
+    
+  }
+  
+  .boton:hover {
+    background-color: #0056a4;
+  }
+
+  .fila1 .nombre {
+    color: black; /* Cambiar el color del texto del nombre a negro */
+  }
+  .fila2 .nombre {
+    color: black; /* Cambiar el color del texto del nombre a negro */
+  }
