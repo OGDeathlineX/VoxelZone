@@ -1,20 +1,37 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;1,100;1,300;1,400;1,500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Open+Sans:wght@300&display=swap');
-body{
-   
+body {
+    margin: 0;
+    font-family: var(--bs-body-font-family);
+    font-size: var(--bs-body-font-size);
+    font-weight: var(--bs-body-font-weight);
+    line-height: var(--bs-body-line-height);
+    color:#16285A;
+    text-align: var(--bs-body-text-align);
+    background-color: var(--bs-body-bg);
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: transparent;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
     justify-content: center;
     align-items: center;
-    height: auto;
-    margin: 0;
-    padding: 0;
-    background: rgb(105,156,207);
-    background: linear-gradient(185deg, rgba(105,156,207,1) 0%, rgba(110,103,176,0.6896008403361344) 50%, rgba(144,73,116,1) 100%);
 }
-.nosotros{
+
+.nosotros {
     background-color: #ECECEC;
     padding: 0;
-    margin: 0% 20% 20% 20%;
+    margin: 0% 0% 0% 0%;
     position: relative;
+    height: auto;
+    width: 65%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
 }
 
 h5{
@@ -29,13 +46,17 @@ h5{
 .size{
     font-size: 44px;
     font-family: 'Audiowide', sans-serif;
+    color: #16285A;
    
 }
 
-.nosotros > p{
-    margin: 5% 20% 5% 20%;
+.nosotros > p {
+    margin: 2% 20% 3% 20%;
     font-family: 'Roboto';
     color: #034158;
+    font-size: 3vh;
+    text-align: justify;
+    width: 80%;
 }
 
 
@@ -76,10 +97,7 @@ h5{
 @media screen and (max-width: 768px) {
     body {
         align-items: flex-start; /* Alinear contenido arriba en pantallas pequeñas */
-    }
-
-    .nosotros {
-        margin: 10px; /* Reducir el margen para dar más espacio en pantallas pequeñas */
+        width: 100%;
     }
 
     h5 {
@@ -90,7 +108,9 @@ h5{
     .size {
         font-size: 36px; /* Ajustar el tamaño de fuente para móviles */
     }
-
+    .nosotros{
+        width: 100%;
+    }
     .nosotros > p {
         margin: 10px; /* Ajustar el margen para móviles */
     }

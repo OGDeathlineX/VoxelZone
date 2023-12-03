@@ -57,9 +57,8 @@ h5{
 }
 
 .size{
-    font-size: 44px;
-    font-family: 'Audiowide', sans-serif;
-   
+    font-size: 6vh;
+    font-family: 'Audiowide', sans-serif; 
 }
 
 .nosotros > p{
