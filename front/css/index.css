@@ -74,9 +74,14 @@ main {
     background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, transparent 100%);
   }
   
-  .hgroup{
+  .hgroup {
     display: flex;
-  }
+    overflow: auto;
+    white-space: nowrap;
+    margin: 1%;
+    flex-wrap: nowrap;
+}
+  
   .imageContent {
     position: relative; /* Agregado para que el overlay sea relativo a este contenedor */
     height: 30vh;
@@ -102,27 +107,31 @@ main {
     background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, transparent 100%);
   }
   
-  .titulo {
+.titulo {
     font-family: audiowide;
     position: absolute;
-    bottom: -12vh;
+    bottom: 0vh;
     color: white;
-    width: 15%;
     text-align: center;
     display: flex;
     justify-content: center;
     flex-direction: column;
-    flex-wrap: wrap;
     align-content: center;
     align-items: center;
-    margin: 0 5vh;
+    text-shadow: 0 0 20px BLACK;
+    -webkit-text-stroke: black;
+    -webkit-text-stroke-width: 0.13vh;
+    width: 100%;
+    white-space: pre-wrap;
 }
+
 .content {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     align-content: center;
     justify-content: center;
+    margin:0 2vh;
 }
 
 body{
