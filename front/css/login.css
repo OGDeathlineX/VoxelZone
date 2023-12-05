@@ -28,23 +28,23 @@ a {
   font-size: 5vh;
 }
 /* unvisited link */
-a:link {
+#formulario a:link {
   color: #593B72;
 }
 
 /* visited link */
-a:visited {
+#formulario a:visited {
   color: #904974;
 }
 
 /* mouse over link */
-a:hover {
+#formulario a:hover {
   color: #6E67B0
   ;
 }
 
 /* selected link */
-a:active {
+#formulario a:active {
   color: #904974;
 }
 

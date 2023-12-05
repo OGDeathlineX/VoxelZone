@@ -8,11 +8,12 @@
         <link rel="icon" type="image/png" sizes="32x32" href="img/icons/favicon-32x32.png">
         <link rel="icon" type="image/png" sizes="16x16" href="img/icons/favicon-16x16.png">
         <link rel="manifest" href="/img/icons/site.webmanifest">
-		<title>Voxel Zone - Modificar Usuarios</title>
+		<title>Voxel Zone - Crear Contenido</title>
 		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 		<script defer src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
 		<script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 		<script src="https://kit.fontawesome.com/d69158fd63.js" crossorigin="anonymous"></script>
+		<script src="https://cdn.tiny.cloud/1/onj3tqfmtyz9tn16m6tdcqmfrtv1agu5e8mn4qxavp12izn9/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
 		<link href="/docs/5.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto%3A300%2C400%2C500"/>
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide%3A400"/>
@@ -22,43 +23,62 @@
 		<link rel="stylesheet" href="css/header.css"/>
 		<link rel="stylesheet" href="css/footer.css"/>
 		<link rel="stylesheet" href="css/select.css"/>
+		<link rel="stylesheet" href="css/style.css"/>
 		<script src="js/login.js"></script>
+		
+		<script defer src="js/headerfooter.js"></script>
 	</head>
-    <!-- <?php include 'header.html';?> -->
+    <header id="header">
+
+    </header>
 	<body>
-		<body>
-            <main class="login-box">
-                <form id="formulario">
-                <h1 class="login-title">Admin Usuario</h1>
-                
-                <div class="group">
-                    <input required="" type="text" class="input" name="correo">
-                    <label><i class="fa-solid fa-user"></i>Correo Electrónico</label>
-                </div>
-
-                <div class="group">
-                    <input required="" type="text" class="input" name="usuario">
-                    <label><i class="fa-solid fa-user"></i>Nombre de usuario</label>
-                </div>
-
-                <div class="group">
-                    <input required="" type="password" class="input" name="pass">
-                    <label><i class="fa-solid fa-lock"></i>Contraseña</label>
-                </div>
-
+    <!-- <?php include 'header.html';?> -->
+		<main class="login-box">
+			<form id="formulario">
+			<h1 class="login-title">Header</h1>
+			
+			<div class="mid">
 				<div class="group">
-					<h3>Rol</h3>
-					<select name="category">
-						<option>Admin</option>
-						<option>Usuario</option>
-					</select>
+					<label>Nombre</label>
+					<input required="" type="text" class="input" name="Nombre">
 				</div>
 
+				<div class="group-tiny">
+					<h3>URL</h3>
+					<input required="" type="text" class="input" name="url">
+				</div>
 
-                <button class="btn-login" type="submit">Modificar</button>
-                </form>
+				<div class="group-tiny">
+					<h3>Orden</h3>
+					<input required="" type="number" class="input" name="orden">
+				</div>
 
-		</main>
-	</body>
-	<!-- <?php include 'footer.html'; ?> -->
-</html>
+				<div class="group-tiny">
+					<h3>Padre</h3>
+					<input required="" type="number" class="input" name="padre">
+				</div>
+				
+				<div class="mid">
+					<div class="group">
+						<h2 class="login-subtitle">Autor</h2>
+						<select name="author">
+							<option>0</option>
+							<option>1</option>
+						</select>
+					</div>
+				</div>
+
+				<div class="group">
+					<button class="btn-login" type="submit">Modificar</button>
+				</div>
+
+				</form>
+			</main>
+		</body>
+		<footer class="footer" id="footer">
+
+		</footer>
+		<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+		<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+		<!-- <?php include 'footer.html'; ?> -->
+	</html>

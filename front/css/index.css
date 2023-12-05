@@ -3,13 +3,12 @@ html, body
     background: linear-gradient(225deg, rgba(105,156,207,1) 0%, rgba(136,103,176,1) 50%, rgba(144,73,116,1) 100%);
     background-size: cover;
     background-repeat: no-repeat;
-    height: 100%;
 }
 
 main
 {
     width: 60%;
-    margin: 0 auto;
+    margin: 0;
 }
 
 footer
@@ -163,6 +162,16 @@ h5{
   
 }
 
+button.olark-launch-button {
+    z-index: 1 !important;
+  }
+  .menu {
+    z-index: 1000 !important;
+  }
+
+.tox .tox-tinymce {
+    width: 80%;
+}
 
 @media screen and (max-width: 900px) {
     body {
