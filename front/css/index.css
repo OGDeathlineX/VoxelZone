@@ -4,7 +4,26 @@ html, body
     background-size: cover;
     background-repeat: no-repeat;
 }
+body img{
+    margin:0;
+}
+.carousel-caption .text-start{
+    background-color: #000;
+}
 
+.categoria>h2{
+    font-family: audiowide;
+    margin-left: 2vh;
+    text-decoration-line: underline;
+    text-decoration-thickness: 1.8vh;
+    text-decoration-color: #034158;
+}
+
+.categoria{
+    border-bottom: #034158;
+    border-bottom-width: 4vh;
+    margin-bottom: 3vh;
+}
 
 footer
 {
