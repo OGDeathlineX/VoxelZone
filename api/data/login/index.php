@@ -4,7 +4,7 @@
 		$sql 	= "SELECT user FROM 
 								users 
 							WHERE 
-								email ='".$data["email"] ."' 
+								email ='".$data["correo"] ."' 
 							AND 
 								pass='".$data["pass"]."'";
 		$result = $mysqli -> query($sql);

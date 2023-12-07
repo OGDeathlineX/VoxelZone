@@ -5,7 +5,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
 	const toastBootstrap = bootstrap.Toast.getOrCreateInstance(toastLiveExample);
 	const toastBootstrap2 = bootstrap.Toast.getOrCreateInstance(toastLiveExample2);
 	
-	function jwt(){
+	function jwt()
+	{
 		const formData  = new FormData();
 		formData.append("jwt", true);
 		fetch("php/jwt/", {
@@ -24,7 +25,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 	function logSubmit(event) {
 		event.preventDefault();
 		var data = new FormData(document.getElementById("formulario"));
-		fetch("php/", {
+		fetch("php/login.php", {
 			method: "POST",
 			body: data
 		}).then(res => {
@@ -35,7 +36,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		}).then(res =>{
 			console.log(res);
 			if(res.status==200){
-				document.location.href = "index.html";
+				document.location.href = "https://acadserv.upaep.mx/proyecto_final/equipo2/front/admin.html";
 			}else if(res.status==400){
 				toastBootstrap2.show()
 			}else{

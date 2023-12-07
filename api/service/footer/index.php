@@ -17,7 +17,8 @@
 	{
 		if(isset($data))
 		{
-			$result = getContent($data, $mysqli);
+			$result["icons"] = getIcons( $mysqli);
+			$result["text"] = getLastText( $mysqli);
 			if($result != false)
 			{
 				$result["status"]	= 200; 

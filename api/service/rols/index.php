@@ -2,11 +2,11 @@
 	/* Variables */
 	$debug		=	true;
 	$secret_Key	=	'QNjYhAxOlf0G6Iav1I53WJqTGGK8BatIuBKg5ArbPBUG';
-	$key		=	"users";
+	$key		=	"rols";
 	
 	/* Archivos base */
 	include '../../helper/helper.php';
-	include '../../data/users/index.php';
+	include '../../data/rols/index.php';
 
 	if($method=='POST')
 	{
@@ -26,13 +26,13 @@
 				echo '{"status":500,"description":"Error al insertar datos: ' . $mysqli->error . '"}';
 				die();
 			}
-		}	
+		}
 	}
 	if($method=='GET')
 	{
 		if(isset($data))
 		{
-			$result = getUsers($data, $mysqli);       
+			$result = getRols($data, $mysqli);       
 			if($result != false)
 			{
 				$result["status"]	= 200; 
@@ -73,13 +73,13 @@
 		if ($resultSql) 
 		{
 			$result["status"] = 200;
-			$result["email"] = $data["email"];
+			$result["id"] = $data["id"];
 			$result["mensaje"] = "Eliminación Exitosa!";
 
 			echo json_encode($result);
 			die();
 		} 
-		else 
+		else
 		{
 			echo '{"status":500,"description":"Error al eliminar datos: ' . $mysqli->error . '"}';
 			die();

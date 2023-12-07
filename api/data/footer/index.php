@@ -1,7 +1,7 @@
 <?php
     function getIcons($mysqli)
     {
-        $sql = "SELECT social_media.icon FROM footer INNER JOIN social_media ON footer.social_medias=social_media.id";
+        $sql = "SELECT social_media.icon, social_media.name FROM footer INNER JOIN social_media ON footer.social_medias=social_media.id";
 	    $result = $mysqli -> query($sql);
 
         if ($result->num_rows > 0) 

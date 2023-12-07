@@ -30,17 +30,14 @@ document.addEventListener("DOMContentLoaded", function(event)
             return res.json();
         }).then(res => 
 			{
-				console.log(res);
 				if(res.status == 200)
 				{
-					console.log(res);
                     let html = '';
                     for (const key in res["Users"]) 
                     {
 						if(!isNaN(key))
 						{
 							const userItem = res["Users"][key];
-							console.log(userItem);
 							html += '<tr><th>';
 							html += userItem.email;
 							html += '</th><th>';
@@ -54,7 +51,7 @@ document.addEventListener("DOMContentLoaded", function(event)
 							html += '</th><th>';
 							html += userItem.profilepic;
 							html += '</th><th>';
-							html += '<button onclick="modifyUsers('+userItem.email+')" class="btn btn-warning"><i class="fa-solid fa-pen-to-square"></i></button>';
+							html += '<a href="./adminUsers.html?email='+userItem.email+'"><button class="btn btn-warning"><i class="fa-solid fa-pen-to-square"></i></button></a>';
 							html += '</th><th>';
 							html += '<button onClick="deleteUsers(\''+userItem.email+'\')" class="btn btn-danger"><i class="fa-solid fa-trash"></i></button>';
 							html += '</th></tr>';  
@@ -97,9 +94,7 @@ document.addEventListener("DOMContentLoaded", function(event)
 							html += '</th><th>';
 							html += userItem.nombre;
 							html += '</th><th>';
-							html += userItem.rol;
-							html += '</th><th>';
-							html += '<button onClick="modifyRols('+userItem.id+')" class="btn btn-warning"><i class="fa-solid fa-pen-to-square"></i></button>';
+							html += '<a href="./adminRols.html?id='+userItem.id+'"><button class="btn btn-warning"><i class="fa-solid fa-pen-to-square"></i></button></a>';
 							html += '</th><th>';
 							html += '<button onClick="deleteRols('+userItem.id+')" class="btn btn-danger"><i class="fa-solid fa-trash"></i></button>';
 							html += '</th></tr>';  
@@ -240,31 +235,12 @@ function cerrar_session()
 	}).catch(err => console.error(err));		
 }
 
-function modifyUsers(email)
-{
-	fetch("php/modifyUsers.php", 
-	{
-		method: "POST",
-		body: email
-	}).then(res => {
-		if(res.status != 200)
-		{
-			throw new Error("Bad Server Response");
-		}
-		return res.json();
-	}).then(res => 
-		{
-			console.log(res);
-			if(res.status == 200)
-			{
-
-			}
-		}).catch(err => console.error(err));
-		return false;	
-}
-
 function deleteUsers(email)
 {
+	var resultado = window.confirm('¿Estas seguro de que quieres eliminar al usuario '+email+'?');
+	if (resultado === false)
+		return false;
+
 	const formData = new FormData();
     formData.append("email", email);
 
@@ -314,10 +290,17 @@ function modifyRols(id)
 
 function deleteRols(id)
 {
+	var resultado = window.confirm('¿Estas seguro de que quieres eliminar el rol con el id: '+id+'?');
+	if (resultado === false)
+		return false;
+
+	const formData = new FormData();
+    formData.append("id", id);
+
 	fetch("php/deleteRols.php", 
 	{
 		method: "POST",
-		body: id
+		body: formData
 	}).then(res => {
 		if(res.status != 200)
 		{
@@ -329,7 +312,7 @@ function deleteRols(id)
 			console.log(res);
 			if(res.status == 200)
 			{
-
+				document.location.reload();
 			}
 		}).catch(err => console.error(err));
 		return false;	
@@ -360,10 +343,17 @@ function modifyContents(id)
 
 function deleteContents(id)
 {
-	fetch("php/deleteContents.php", 
+	var resultado = window.confirm('¿Estas seguro de que quieres eliminar el rol con el id: '+id+'?');
+	if (resultado === false)
+		return false;
+
+	const formData = new FormData();
+	formData.append("id", id);
+
+	fetch("php/deleteContents.php",
 	{
 		method: "POST",
-		body: id
+		body: formData
 	}).then(res => {
 		if(res.status != 200)
 		{
@@ -375,7 +365,7 @@ function deleteContents(id)
 			console.log(res);
 			if(res.status == 200)
 			{
-
+				document.location.reload();
 			}
 		}).catch(err => console.error(err));
 		return false;	
@@ -406,10 +396,17 @@ function modifyCategory(id)
 
 function deleteCategory(id)
 {
-	fetch("php/deleteCategory.php", 
+	var resultado = window.confirm('¿Estas seguro de que quieres eliminar la categoria con el id: '+id+'?');
+	if (resultado === false)
+		return false;
+
+	const formData = new FormData();
+	formData.append("id", id);
+
+	fetch("php/deleteCategory.php",
 	{
 		method: "POST",
-		body: id
+		body: formData
 	}).then(res => {
 		if(res.status != 200)
 		{
@@ -421,7 +418,7 @@ function deleteCategory(id)
 			console.log(res);
 			if(res.status == 200)
 			{
-
+				document.location.reload();
 			}
 		}).catch(err => console.error(err));
 		return false;	

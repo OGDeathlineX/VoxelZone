@@ -1,78 +1,53 @@
-document.addEventListener("DOMContentLoaded", function(event) {
-	const toastLiveExample = document.getElementById('liveToast2');
-    const toastBootstrap = bootstrap.Toast.getOrCreateInstance(toastLiveExample);
-    
-	function jwt(){
-		const formData  = new FormData();
-		formData.append("jwt", true);
-		fetch("php/jwt/", {
-			method: "POST",
-			body: formData
-		}).then(res => {
-			if (res.status != 200){ throw new Error("Bad Server Response"); }
-			return res.json();
-		}).then(res =>{
-			if(res.status==200){
-				document.getElementById('jwt').value = res.jwt;
-			}
-		}).catch(err => console.error(err));
-	}
+document.addEventListener("DOMContentLoaded", function(event) 
+{
+	const toastLiveExample2 = document.getElementById('liveToast2');
+	const toastBootstrap2 = bootstrap.Toast.getOrCreateInstance(toastLiveExample2);
+	const textoToast = document.getElementById("escribirToast");
 
-
-	function logSubmit(event) {
+	function logSubmit(event) 
+	{
 		event.preventDefault();
 		var data = new FormData(document.getElementById("registro"));
-        
-        for (var pair of data.entries()) {
-            console.log(pair[0] + ": " + pair[1]);
-        }
-		fetch("php/registro.php", {
+
+		fetch("php/registro.php", 
+		{
 			method: "POST",
 			body: data
             
 		}).then(res => {
-			if (res.status != 200){ 
+			if (res.status != 200)
+			{ 
 				throw new Error("Bad Server Response " + res.status); 
 			}
-            ;
 			return res.json();
            
 		}).then(res =>{
             console.log(res);
-			if (res.status==200) {
+			if (res.status==200) 
+			{
                 console.log("Registro exitoso");
-                //toastBootstrap.show();
-                //document.location.href ="perfiles.html";
+                document.location.href ="https://acadserv.upaep.mx/proyecto_final/equipo2/";
             }
             if (res.status==400) {
-                console.log("Correo invalido");
-                //toastBootstrap.show();
+                textoToast.innerHTML = "Correo invalido";
+                toastBootstrap2.show();
                 
             }
             if (res.status==402) {
-                console.log("Las contraseñas no coinciden");
-                //toastBootstrap.show();
+				textoToast.innerHTML = "Las contraseñas no coinciden";
+                toastBootstrap2.show();
                
             }
             if (res.status==401) {
-                console.log("Todos los campos son obligatorioss");
-                //toastBootstrap.show();
+                textoToast.innerHTML = "Todos los campos son obligatorios";
+                toastBootstrap2.show();
                
             }
 
 		}).catch(err => console.error(err));
 		return false;	
 	}
-
-	
-	jwt();
     
 	const form = document.getElementById("registro");	
     form.addEventListener("submit", logSubmit);
-        
-   
-  
-
-
-	
 });

@@ -22,7 +22,7 @@
 		<link rel="stylesheet" href="css/header.css"/>
 		<link rel="stylesheet" href="css/footer.css"/>
 		<link rel="stylesheet" href="css/select.css"/>
-		<script src="js/login.js"></script>
+		<script src="js/adminRol.js"></script>
 	</head>
     <!-- <?php include 'header.html';?> -->
 	<body>
@@ -32,11 +32,12 @@
                 <h1 class="login-title">Rol</h1>
 
                 <div class="group">
-                    <input required="" type="text" class="input" name="rol_name">
+					<input type="hidden" name="id" id="id">
+                    <input required type="text" class="input" name="rol_name" id="rol_name">
                     <label><i class="fa-solid fa-user"></i>Nombre del Rol</label>
                 </div>
 
-                <button class="btn-login" type="submit">Modificar</button>
+                <button class="btn-login" type="submit">Guardar</button>
                 </form>
 
 		</main>

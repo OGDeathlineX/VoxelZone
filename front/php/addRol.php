@@ -14,13 +14,18 @@
 	header('Content-Type: application/json; charset=utf-8');
 
     /********** Validacion de datos ****************/
-	
+	if(!isset($_POST["rol_name"]) )
+	{
+		echo '{"status":502,"description":"Error de parametros"}';
+		exit();	
+	}
+
 	/***************** JWT **************/
 	$secret_Key  	= 'QNjYhAxOlf0G6Iav1I53WJqTGGK8BatIuBKg5ArbPBUG';
 	$date   		= new DateTimeImmutable();
 	$expire_at     	= $date->modify('+1 minutes')->getTimestamp();      
 	$domainName 	= "acadserv.upaep.mx";
-	$key		   	= "users";                                          
+	$key		   	= "rols";                                          
 	$request_data = [
 		'iat'  		=> $date->getTimestamp(),        
 		'iss'  		=> $domainName,                  
@@ -29,9 +34,9 @@
 		'key' 		=> $key                
 	];
 	$auth	=	JWT::encode($request_data,$secret_Key,'HS256');
-	$url	=	'https://acadserv.upaep.mx/proyecto_final/equipo2/api/service/users/';
-	$post	=	$_GET;
-	$metodo	=	"GET";
+	$url	=	'https://acadserv.upaep.mx/proyecto_final/equipo2/api/service/rols/';
+	$post	=	$_POST;
+	$metodo	=	"POST";
 	curl($url,$post,$auth,$metodo);
 	$_SESSION["session"]=true;
 ?>

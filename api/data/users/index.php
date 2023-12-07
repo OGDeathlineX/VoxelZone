@@ -5,41 +5,71 @@
         $email = $data['email'];
         $user = $data["usuario"];
         $password = $data["password"];
-        $rol= 1;
         $name = 'hi';
         $perfil = 'hi';
 
+        if(isset($data["rol"]))
+            $rol = $data["rol"];
+        else
+            $rol = 2;
 
         // Insertar datos en la base de datos
         $sql = 'INSERT INTO users (email, user, name , pass, rol, profilepic) 
-                VALUES ("'.$email.'", "'.$user.'", "'.$name.'", "'.$password.'",'.$rol.', "'.$email.'")';
+                VALUES ("'.$email.'", "'.$user.'", "'.$name.'", "'.$password.'",'.$rol.', "'.$perfil.'")';
         $result = $mysqli->query($sql);
-
+        
+        if ($result) 
+        {
+            return true;
+        } else 
+        {
+            return false;
+        }
     }
 
-/*function modify($data, $mysqli)
-{
-    $email = $data['email'];
-    $user = $data["usuario"];
-    $password = $data["password"];
-    $rol= 1;
-    $name = '';
-    $perfil = '';
-
-    $sql = "INSERT INTO users (email, user, name , pass, rol, profilepic) 
-            VALUES ('$email', '$user', '$name', '$password','$rol', '$perfil')";
-    $result = $mysqli->query($sql)
-
-    if($result->num_rows > 0)
+    function getUsers($data, $mysqli)
     {
-        return $data['usuario'];
-    }
-    else
-    {
-        return false;
+        $sql = "SELECT * FROM users WHERE email='".$data["email"]."'";
+	    $result = $mysqli -> query($sql);
+
+        if ($result->num_rows > 0) 
+        {
+            return $result->fetch_all(MYSQLI_ASSOC);
+        } 
+        else 
+        {
+            return false;
+        }
     }
 
-}*/
+    function modify($data, $mysqli)
+    {
+        $email = $data['email'];
+        $user = $data["usuario"];
+        $password = $data["password"];
+        $rol= $data["rol"];
+        $name = '';
+        $perfil = '';
+
+        $sql = 'UPDATE users 
+        SET email = "'.$email.'", 
+            user = "'.$user.'", 
+            name = "'.$name.'", 
+            pass = "'.$password.'", 
+            rol = '.$rol.', 
+            profilepic = "'.$perfil.'"
+        WHERE email = "'.$email.'"';
+        $result = $mysqli->query($sql);
+        
+        if ($result) 
+        {
+            return true;
+        } 
+        else 
+        {
+            return false;
+        }
+    }
 
 function delete($data, $mysqli)
 {
